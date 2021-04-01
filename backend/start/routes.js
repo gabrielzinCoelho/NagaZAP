@@ -16,4 +16,14 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+//session
+
 Route.post('/sessions', 'SessionController.store')
+
+//telegram API
+
+Route.post('/telegramUpdates/:tokenBot', 'TelegramController.telegramUpdates')
+
+//user
+
+Route.put('/user', 'UserController.updateByCode')

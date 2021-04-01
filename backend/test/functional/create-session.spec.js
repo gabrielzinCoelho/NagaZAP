@@ -3,6 +3,7 @@
 const { test, trait } = use('Test/Suite')('Create Session')
 
 trait('Test/ApiClient')
+trait('DatabaseTransactions')
 
 const User = use('App/Models/User')
 const Factory = use('Factory')

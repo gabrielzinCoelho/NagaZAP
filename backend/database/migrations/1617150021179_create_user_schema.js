@@ -7,13 +7,14 @@ class CreateUserSchema extends Schema {
   up () {
     this.create('users', (table) => {
       table.increments()
-      table.string("name").notNullable()
+      table.string("name")
       table.string("phoneNumber").notNullable().unique()
-      table.string("password").notNullable()
+      table.string("password")
       table.integer("file_id")
       table.string("statusMessage")
-      table.string("token")
-      table.string("token_created_at")
+      table.boolean("isValid").notNullable()
+      table.string("securityCode").unique()
+      table.string("securityCode_created_at")
       table.timestamps()
     })
   }

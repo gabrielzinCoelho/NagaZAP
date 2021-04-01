@@ -25,6 +25,13 @@ Factory.blueprint('App/Models/User', async (faker, i, data) => {
       numeric: true
     }),
     password: await Hash.make(faker.password()),
+    isValid: true,
+    securityCode: faker.string({
+      length: 8,
+      alpha: false,
+      numeric: true
+    }),
+    securityCode_created_at: new Date(),
     ...data
   }
 })
